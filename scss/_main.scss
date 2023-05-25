@@ -1,0 +1,55 @@
+@import 'variables',
+        'mixins',
+        'fonts';
+
+
+body {
+    min-width: 320px;
+    overflow-x: hidden;
+}
+
+.container {
+   padding: 0 15px;
+//    border: 1px solid red;
+}
+
+
+@import './header/header';
+@import './header/header-medias';
+
+@import './slider/slider';
+@import './slider/slider-medias';
+
+@import './seti/seti';
+@import './seti/seti-medias';
+
+@import './rolly/rolly';
+@import './rolly/rolly-medias';
+
+@import './pizza/pizza';
+@import './pizza/pizza-medias';
+
+@import './wok/wok';
+@import './wok/wok-medias';
+
+@import './new/new';
+@import './new/new-medias';
+
+@import './10reasons/reasons';
+@import './10reasons/reasons-medias';
+
+@import './comments/comments';
+@import './comments/comments-medias';
+
+@import './form/form';
+@import './form/form-medias';
+
+@import './about/about';
+@import './about/about-medias';
+
+@import './footer/footer';
+@import './footer/footer-medias';
+
+
+             
+        

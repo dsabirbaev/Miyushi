@@ -1,0 +1,169 @@
+
+
+
+@media (min-width: 750px) {
+   
+    .header__inner {
+        min-height: 88px;
+    }
+    .header__top {
+        min-width: 60%;
+    }
+    .logo {
+        &__link {
+           display: none;
+        }
+        &__link2 {
+            @include flex($a-items:center);
+        }
+    }
+
+    .hamburger-menu__items {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1200px)  {
+    .container {
+        max-width: 1170px;
+        padding: 0 15px;
+        margin: 0 auto;
+     }
+     .header__inner {
+        @include flex(column);
+     }
+     .header__top {
+        min-height: 98px;
+     }
+     .logo {
+        &__link2 {
+           display: none;
+        }
+        &__link3 {
+            @include flex($a-items:center);
+        }
+    }
+     .addresses {
+        @include flex($gap: 130px);
+        a {
+            color: $color-black;
+        }
+     }
+     .cell-number {
+        @include flex($a-items:center, $gap:20px);
+        a {
+            color: $color-black;
+        }
+        &__content {
+            max-height: 30px;
+        }
+     }
+     .profile {
+        display: none;
+     }
+     .header__bottom {
+        order: 1;
+        border-top: 1px solid $color-grey;
+     }
+    .hamburger-menu {
+        padding: 0 15px;
+        &__label {
+            display: none;
+        }
+        &__items {
+            visibility: visible;
+            display: inline-flex;
+            position: static;
+            width: auto;
+            padding: 0px;
+            border-color: transparent;
+            border: none;
+            background-color: $color-white;
+            li:nth-child(1) {
+                margin-top: 0px;
+                position: relative;
+               span {
+                display: inline-block;
+               }
+            }
+            .dropdown {
+                @include flex(column);
+                position: absolute;
+                width: 100%;
+                left: 0;
+                top: 100%;
+                z-index: 1;
+                background-color: $color-white;
+                display: none;
+            }
+            .dropdown__link {
+                @include font-style(14px, $ff-OpenSansSemiBold, 600, $color-black, uppercase);
+                padding: 10px;
+                display: block; 
+                &:hover {
+                    background-color: $color-green;
+                    color: $color-white;
+                }
+            }
+            li:nth-child(1):hover .dropdown{
+                display: flex;
+            }
+            
+            li {
+                margin: 0px;
+            }
+            li:nth-child(6) {
+                display: block;
+                position: relative;
+                img {
+                    position: absolute;
+                    top: 50%;
+                    left: 35px;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            li:nth-child(7) {
+                display: block;
+                position: relative;
+                img {
+                    position: absolute;
+                    top: 50%;
+                    left: 35px;
+                    transform: translate(-50%, -50%);
+                }
+                span {
+                    @include font-style(8px, $ff-OpenSansLight, 300, $color-white);
+                    background-color: $color-orange;
+                    border-radius: 5px;
+                    padding: 3px;
+                    position: absolute;
+                    top: 10%;
+                    left: 18%;
+                }
+            }
+            li:nth-child(8) {
+                display: none;
+            }
+            li:nth-child(9) {
+                display: none;
+            }
+            li:nth-child(10) {
+                display: none;
+            }
+            li:nth-child(11) {
+                display: none;
+            }
+            li:nth-child(12) {
+                display: none;
+            }
+        }
+        &__item {
+            padding: 15px 20px;
+            margin: 0;
+        }
+        .hamburger-menu__item-padding {
+            padding: 15px 65px;
+        }
+    }
+
+}

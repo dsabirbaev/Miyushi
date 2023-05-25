@@ -1,0 +1,70 @@
+
+
+.slider {
+  
+    &-item {
+        @include backgroundImage(url('../images/slider-bg.jpg'), center);
+        min-height: 242px;
+        position: relative;
+    }
+    &__inner {
+        @include flex(column, $gap:20px);
+        padding-top: 40px;
+    }
+
+    &__title {
+        @include font-style(49px, $ff-LemonTuesdayRegular, 400, $color-green);
+        max-width: 220px;
+    }
+
+    &__date {
+        @include font-style(12px, $ff-OpenSansLightItalic, 300, $color-white);
+    }
+
+    &__btn {
+        display: none
+    }
+
+    &__sale {
+        @include font-style (14px, $ff-OpenSansBold, 700, $color-white, uppercase);
+        @include flex(column, center, center);
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        line-height: 1.2;
+        background-color: $color-red;
+        border-radius: 50%;  
+        position: absolute;
+        top: 85px;
+        left: 65%;
+    }
+}
+
+
+  
+
+/* Точки */
+.slider .slick-dots{
+    @include flex(row, center, center);
+    position: absolute;
+    top: 102%;
+    left: 0;
+    right: 0;
+}
+.slider .slick-dots li{
+	list-style: none;
+	margin: 0px 5px;
+}
+.slider .slick-dots button{
+	font-size: 0;
+	width: 12px;
+	height: 12px;
+	background-color: $color-white;
+    border: 2px solid grey;
+	border-radius: 50%;
+}
+.slider .slick-dots li.slick-active button{
+	background-color: $color-green;
+    border: 2px solid $color-green;
+}
+

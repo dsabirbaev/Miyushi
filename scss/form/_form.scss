@@ -1,0 +1,46 @@
+
+
+.form {
+    @include backgroundImage(url('../images/form/form-bg.jpg'), 20%);
+    min-height: 518px;
+    padding: 56px 0;
+    &__inner {
+        @include flex(column, $gap:20px);
+    }
+    &__header {
+        @include font-style(16px, $ff-OpenSansRegular, 400, $color-white);
+    }
+    &__title {
+       @include font-style(44px, $ff-LemonTuesdayRegular, 400, $color-white);
+       line-height: 1.2; 
+    }
+
+    &__auth {
+        @include flex(column, $gap:40px);
+        &-name, &-phone {
+            @include font-style(14px, $ff-OpenSansRegular, 400, $color-white);
+            background-color: transparent;
+            padding: 10px 15px;
+            border-bottom: 2px solid $color-white;
+            
+        }
+        &-name::placeholder, &-phone::placeholder {
+            color: $color-white;
+        }
+        &-name:focus, &-phone:focus {
+           background-color: rgb(255, 255, 255, 0.2);
+        }
+        &-btn {
+            @include font-style(14px, $ff-OpenSansSemiBold, 600, $color-white, uppercase);
+            background-color: $color-orange;
+            padding: 18px 0;
+            border-radius: 10px;
+            
+        }
+    }
+
+    &__footer {
+        @include font-style(12px, $ff-OpenSansRegular, 400, $color-white);
+     }
+}
+

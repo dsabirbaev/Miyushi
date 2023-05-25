@@ -1,0 +1,97 @@
+
+
+
+
+
+
+@media (min-width: 750px) {
+
+
+    .wok__title {
+        font-size: 48px;
+
+        &_320 {
+            display: none;
+        }
+        &_750 {
+            display: block;
+        }
+    }
+    // Dots 
+    .wok__items .slick-dots{
+        @include flex(row, center, center);
+        position: absolute;
+        top: 106%;
+        left: 0;
+        right: 0;
+    }
+    .wok__items .slick-dots li{
+        list-style: none;
+        margin: 0px 10px;
+    }
+    .wok__items .slick-dots button{
+        font-size: 0;
+        width: 10px;
+        height: 10px;
+        background-color: $color-grey;
+        border-radius: 50%;
+    }
+    .wok__items .slick-dots li.slick-active button{
+        background-color: $color-green;
+    }
+
+    // Arrows
+    .wok__items .slick-arrow{
+        position: absolute;
+        top: 105%;
+        z-index: 1;
+        font-size: 0;
+        cursor: pointer;
+        color: $color-grey;
+        border: none;
+        background-color: transparent;
+     }
+     
+     .wok__items .slick-prev{
+        left: 30%;
+         &::before {
+             content: "\e901";
+             font-family: 'icomoon';
+             font-size: 30px;
+         }
+     }
+     
+     .wok__items .slick-next{
+        right: 30%;
+         &::after {
+             content: "\e900";
+             font-family: 'icomoon';
+             font-size: 30px;
+         }
+     }
+
+}
+
+@media (min-width: 1200px)  {
+
+    .container {
+        max-width: 1170px;
+        padding: 0 15px;
+        margin: 0 auto;
+    }
+
+    .wok__title {
+        font-size: 60px;
+
+        &_750 {
+            display: none;
+        }
+        &_1200 {
+            display: block;
+        }
+    }
+
+    .wok__items .slick-slide {
+        margin: 0 15px;
+    }
+}

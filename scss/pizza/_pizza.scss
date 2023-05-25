@@ -1,0 +1,130 @@
+
+
+
+.pizza {
+    padding: 70px 0;
+    &__inner {
+        @include flex(column, $gap:35px);
+    }
+    &__title {
+        @include font-style(30px, $ff-LemonTuesdayRegular, 400px, $color-title);
+        margin: 0 auto;
+
+        &_750 {
+            display: none;
+        }
+        &_1200 {
+            display: none;
+        }
+    }
+}
+
+.pizza__items {
+    padding: 10px 0;
+    position: relative;
+}
+.pizza-item {
+    min-height: 435px;
+    max-width: 263px;
+    &__img {
+        min-height: 228px;
+        border-radius: 10px;
+        position: relative;
+    }
+    .pizza-item__img_first {
+        @include backgroundImage(url('../images/pizza/1.jpg'), center);
+    }
+    .pizza-item__img_second {
+        @include backgroundImage(url('../images/pizza/2.jpg'), center);
+    }
+    .pizza-item__img_third {
+        @include backgroundImage(url('../images/pizza/3.jpg'), center);
+    }
+    .pizza-item__img_fourth {
+        @include backgroundImage(url('../images/pizza/4.jpg'), center);
+    }
+    &__fire {
+        @include flex(row, center, center);
+        background-color: $color-orange;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 10%;
+        right: 5%;
+    }
+    
+    &__title {
+        @include font-style(20px, $ff-OpenSansBold, 700, $color-black);
+        margin: 0 auto;
+    }
+    &__quantity {
+        @include font-style(12px, $ff-OpenSansLight, 300, $color-black);
+        margin: 0 auto;
+    }
+    &__price {
+        margin: 0 auto;
+        span:nth-child(1) {
+            @include font-style(22px, $ff-RobotoSlabBold, 700, $color-black);
+        }
+        span:nth-child(2) {
+            margin: 0 10px;
+            &::before {
+                content: "\f068";
+                font-family: 'icomoon';
+                font-size: 8px;
+                padding: 5px;
+                border-radius: 50%;
+                border: 1px solid $color-grey;
+                margin-right: 10px;
+            }
+            &::after {
+                content: "\f067";
+                font-family: 'icomoon';
+                font-size: 8px;
+                padding: 5px;
+                border-radius: 50%;
+                border: 1px solid $color-grey;
+                margin-left: 10px;
+            }
+        }
+    }
+
+    &__btn {
+        align-self: flex-start;
+        background-color: $color-orange;
+        padding: 14px 70px 14px 30px;
+        border-radius: 5px;
+        margin: 0 auto;
+        .pizza-item__link {
+            @include font-style(14px, $ff-OpenSansSemiBold, 600, $color-white, uppercase);
+            position: relative;
+            img {
+                position: absolute;
+                top: 0px;
+                right: -50px;
+
+            }
+        }
+    }
+}
+
+// settings for slides
+
+.pizza__items .slick-slide {
+    margin: 0 10px;
+    @include flex(column, $gap:20px);
+    box-shadow: 0px 4px 29px 0px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+
+    &:hover {
+        box-shadow: 0px 4px 29px 0px rgba(0, 230, 64, 0.8);
+    }
+}
+
+.pizza__items .slick-track{
+	margin: 10px 0;
+}
+
+
+

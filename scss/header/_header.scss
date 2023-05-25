@@ -1,0 +1,165 @@
+
+
+.header__inner {
+    @include flex(row, space-between, center);
+    min-height: 56px;
+}
+
+.header__top {
+    @include flex(row, space-between, center, 50px);
+    min-width: 50%;
+    .profile {
+        a:first-child {
+            margin-right: 20px;
+        }
+    }
+}
+
+.header__bottom {
+    order: -1;
+}
+
+// hamburger menu settings
+
+.hamburger-menu__label {
+    @include flex($a-items:center);
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+.hamburger-menu__label>span,
+.hamburger-menu__label>span::before,
+.hamburger-menu__label>span::after {
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background-color: $color-green;
+    transition: all 0.5s;
+}
+.hamburger-menu__label>span::before {
+    content: '';
+    top: -8px;
+}
+.hamburger-menu__label>span::after {
+    content: '';
+    top: 8px;
+}
+
+.hamburger-menu {
+
+    &__items {
+        
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -100%;
+        z-index: 1;
+        width: 100%;
+        height: auto;
+        background-color: #F5F5F5;
+        visibility: hidden;
+        transition: all 0.5s;
+        border: 1px solid $color-black;
+        li:nth-child(-n+7):hover {
+            background-color: $color-green;
+        }
+        li:nth-child(6) {
+            display: none;
+        }
+        li:nth-child(7) {
+            display: none;
+        }
+        li:nth-child(1) {
+            margin-top: 60px;
+            span {
+                display: none;
+            }
+        }
+        li:nth-child(12) {
+            margin-bottom: 60px;
+        }
+        li {
+            margin-left: 60px;
+        }
+    }
+
+    &__item {
+        // border: 1px solid red;
+        display: inline-block;
+        margin-bottom: 20px;
+        padding: 10px;
+        @include font-style(14px, $ff-OpenSansSemiBold, 600, $color-black, uppercase);
+      
+    }
+
+    &__number {
+        @include font-style(18px, $ff-OpenSansBold, 700, $color-black);
+    }
+
+    &__text {
+        @include font-style(10px, $ff-OpenSansRegular, 400, $color-black);
+        margin-bottom: 30px;    
+    }
+
+    &__btn {
+        @include font-style(13px, $ff-OpenSansRegular, 400, $color-green, uppercase);
+        border: 1px solid $color-green;
+        border-radius: 5px;
+        padding: 10px 15px;
+        background-color: transparent;
+        margin: 20px 0;
+    }
+
+    &__address {
+        @include font-style(14px, $ff-OpenSansRegular, 400, $color-black);
+        
+        &::before {
+            content: "\e947";
+            font-family: 'icomoon';
+            color: $color-green;
+            font-size: 15px;
+            padding-right: 10px;
+        }
+    }
+
+    &__email {
+        @include font-style(14px, $ff-OpenSansRegular, 400, $color-black);
+        &::before {
+            content: "\f0e0";
+            font-family: 'icomoon';
+            color: $color-green;
+            font-size: 15px;
+            padding-right: 10px;
+        }
+    }
+    
+}
+
+
+#menu__hamburger:checked~.hamburger-menu__items {
+    visibility: visible;
+    left: 0;
+    transition: all 0.5s;
+}
+
+#menu__hamburger:checked~.hamburger-menu__label>span {
+    transform: rotate(45deg);
+}
+#menu__hamburger:checked~.hamburger-menu__label>span::before {
+    top: 0;
+    transform: rotate(0);
+}
+#menu__hamburger:checked~.hamburger-menu__label>span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+input[type=checkbox], input[type=radio], .logo__link2, .logo__link3, .addresses, .cell-number, .dropdown {
+    display: none;
+}
+
+
+

@@ -1,0 +1,129 @@
+
+
+@media (min-width: 750px) {
+   
+   .slider {
+      &-item {
+         min-height: 420px;
+      }
+      &__inner {
+         @include flex(column, $gap:30px);
+         padding-top: 60px;
+      }
+      &__title {
+         font-size: 72px;
+      }
+      &__date {
+         font-size: 18px;
+      }
+      &__btn {
+         display: block;
+         @include font-style(11px, $ff-OpenSansRegular , 400, $color-white, uppercase);
+         background-color: $color-orange;
+         align-self: flex-start;
+         padding: 10px 20px;
+         border-radius: 5px;
+      }
+      &__sale {
+         font-size: 18px;
+         width: 100px;
+         height: 100px;
+         left: 50%;
+      }
+   }
+
+   .slider .slick-dots{
+      @include flex(row, center, center);
+       position: absolute;
+       top: 90%;
+       left: 0;
+       right: 0;
+   }
+}
+
+
+@media (min-width: 1200px) {
+
+   .container {
+      max-width: 1170px;
+      padding: 0 15px;
+      margin: 0 auto;
+   }
+   .slider {
+
+      &-item {
+         min-height: 676px;
+      }
+      &__inner {
+         @include flex(column, $gap:40px);
+         padding-top: 130px;
+      }
+      &__title {
+         font-size: 110px;
+         line-height: 1.1;
+      }
+      &__date {
+         font-size: 26px;
+      }
+      &__btn {
+         display: block;
+         @include font-style(16px, $ff-OpenSansRegular , 400, $color-white, uppercase);
+         background-color: $color-orange;
+         align-self: flex-start;
+         padding: 20px 30px;
+         border-radius: 5px;
+      }
+      &__sale {
+         font-size: 29px;
+         width: 150px;
+         height: 150px;
+         top: 110px;
+         left: 53%;
+      }
+   }
+
+   // settings for slider.
+   
+   .slider .slick-dots button{
+      width: 15px;
+      height: 15px;
+   }
+
+   .slider .slick-arrow{
+      position: absolute;
+      top: 0;
+      z-index: 1;
+      font-size: 0;
+      cursor: pointer;
+      background-color: #120d17;
+      color: $color-white;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      border: none;
+      &:hover {
+         opacity: 0.8;
+      }
+   }
+   
+   .slider .slick-prev{
+      top: calc(50% - 50px);
+      left: 1%;
+       &::before {
+           content: "\f104";
+           font-family: 'icomoon';
+           font-size: 30px;
+       }
+   }
+   
+   .slider .slick-next{
+      top: calc(50% - 50px);
+      right: 1%;
+       &::after {
+           content: "\f105";
+           font-family: 'icomoon';
+           font-size: 30px;
+       }
+   }
+}
+

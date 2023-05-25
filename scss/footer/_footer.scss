@@ -1,0 +1,97 @@
+
+.footer {
+    padding-bottom: 50px;
+    background-color: $color-footer-bg;
+
+    &__inner {
+        @include flex(column, $gap:45px);
+    }
+}
+
+.footer__top {
+    @include flex(column);
+    &-menu {
+        &:nth-child(2) {
+            display: none;
+        }
+    }
+    &-label {
+        @include font-style(16px, $ff-OpenSansSemiBold, 600, $color-white);
+        padding: 20px 10px;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        border-bottom: 2px solid $color-footer-menu;
+        &::after {
+            content: "\f107";
+            font-family: 'icomoon';
+            color: $color-white;
+            font-size: 30px;
+            position: absolute;
+            top: 50%;
+            right: 0px;
+            transform: translate(-50%, -50%);
+        }
+    }
+    &-items {
+        height: 0;
+        overflow: hidden;
+        transition: all 0.5s;
+        background-color: $color-footer-menu;
+        padding: 0px 10px;
+        li {
+            padding: 5px 0 5px;
+        }
+    }
+    &-link {
+        @include font-style(12px, $ff-OpenSansRegular, 400, $color-footer-text);
+    }
+}
+
+
+.footer__top-input:checked~.footer__top-list .footer__top-items {
+    height: auto;
+    padding: 10px 10px;
+    @include flex(column);
+}
+
+.footer__top-input:checked+.footer__top-label::after {
+    transform: translate(-50%, -50%) rotate(-180deg);
+    transition: all 0.5s;
+}
+
+.footer__top-input:not(checked)+.footer__top-label::after {
+    transition: all 0.5s;
+}
+
+
+.footer__bottom {
+    @include flex(column, $a-items: center, $gap: 40px);
+    &-header {
+        order: 2;
+        @include font-style(12px, $ff-OpenSansRegular, 400, $color-footer-text, uppercase);
+    }
+    &-text {
+        order: 1;
+        @include font-style(11px, $ff-OpenSansRegular, 400, $color-footer-text);
+        text-decoration: underline;
+        a {
+            color: $color-footer-text;
+        }
+    }
+    &-icons {
+        order: -1;
+        @include flex($gap: 10px);;
+        .facebook, .insta, .vk {
+            @include flex(row, center, center);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: $color-white;
+            span {
+                color: $color-footer-bg;
+            }
+        }
+    }
+
+}

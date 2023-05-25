@@ -1,0 +1,100 @@
+
+
+
+.comments {
+    padding: 70px 0;
+    &__inner {
+        @include flex(column, $a-items:center, $gap:42px);
+    }
+    &__title {
+        @include font-style(36px, $ff-LemonTuesdayRegular, 400, $color-title);
+        
+        &_750 {
+            display: none;
+        }
+        &_1200 {
+            display: none;
+        }
+    }
+
+    &__items {
+        @include flex(center, $gap:40px);
+        flex-wrap: wrap;
+    }
+}
+
+.comments__item {
+    max-width: 290px;
+    min-height: 482px;
+    border: 1px solid $color-grey-white;
+    padding: 20px 12px;
+    @include flex(column, $gap:25px);
+    &-header {
+        @include flex();
+    }
+    &-info {
+        align-self: center;
+        margin-left: 8px;
+        .comments__item-name {
+            @include font-style(15px, $ff-OpenSansBold, 700, $color-blue);
+            margin-bottom: 5px;
+        }
+        .comments__item-date {
+            @include font-style(13px, $ff-OpenSansSemiBold, 600, $color-grey);
+        }
+    }
+    &-text {
+        @include font-style(14px, $ff-OpenSansRegular, 400, $color-black);
+        max-width: 250px;
+        line-height: 1.2;
+    }
+    &-food {
+        align-self: flex-start;
+    }
+    &-icons {
+        border-top: 1px solid $color-grey-white;
+        padding-top: 20px;
+        position: relative;
+        .heart, .com, .bull {
+            position: absolute;
+            bottom: 5%;
+            color: $color-blue-white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .com {
+            left: 15%;
+        }
+        .bull {
+            left: 35%;
+        }
+        .number {
+           margin-left: 58px;
+           color: $color-blue;
+        }
+    }
+    &-btn {
+        @include font-style(14px, $ff-OpenSansRegular, 400, $color-white);
+        background-color: $color-blue;
+        padding: 10px 0;
+        border-radius: 3px;
+        &::before {
+            content: "\f189";
+            font-family: 'icomoon';
+            padding-right: 10px;
+        }
+    }
+}
+
+.comments__item-input:checked~.comments__item-label .heart{
+    color: $color-red;
+}
+.comments__item-input2:checked~.comments__item-label .heart{
+    color: $color-red;
+}
+.comments__item-input3:checked~.comments__item-label .heart{
+    color: $color-red;
+}
+.comments__item:nth-child(3) {
+    display: none;
+}

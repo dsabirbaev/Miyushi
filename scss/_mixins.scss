@@ -1,0 +1,46 @@
+
+@mixin font-style($f-size, $f-family, $f-weight, $color, $transform:none) {
+    font-size: $f-size;
+    font-family: $f-family, sans-serif;
+    font-weight: $f-weight;
+    color: $color;
+    text-transform: $transform;
+}
+
+@mixin flex($f-direction:row, $f-content:flex-start, $a-items:stretch, $gap:0px) {
+    display: flex;
+    flex-direction: $f-direction;
+    justify-content: $f-content;
+    align-items: $a-items;
+    gap: $gap;
+}
+
+@mixin backgroundImage($b-image, $b-position, $size:cover) {
+    background-image: $b-image;
+    background-position: $b-position;
+    background-size: $size;
+    background-repeat: no-repeat;
+}
+
+%checkedSubmenu {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: $color-grey-white;
+}
+
+%checkedLabel {
+    transition: all .5s;
+    transform: translate(-50%, -50%) rotate(180deg);
+}
+%notCheckedLabel {
+    transition: all .5s;
+}
+
+
+

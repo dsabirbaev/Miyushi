@@ -1,0 +1,224 @@
+
+
+
+.wok {
+    padding: 70px 0 100px;
+    &__inner {
+        @include flex(column, $gap:35px);
+    }
+    &__title {
+        @include font-style(30px, $ff-LemonTuesdayRegular, 400px, $color-title, uppercase);
+        margin: 0 auto;
+
+        &_750 {
+            display: none;
+        }
+        &_1200 {
+            display: none;
+        }
+    }
+}
+
+.wok__items {
+    padding: 10px 0;
+    position: relative;
+}
+.wok-item {
+    min-height: 538px;
+    max-width: 263px;
+    &__img {
+        min-height: 228px;
+        border-radius: 10px;
+        position: relative;
+    }
+    .wok-item__img_first {
+        @include backgroundImage(url('../images/wok/1.jpg'), center, auto);
+    }
+    .wok-item__img_second {
+        @include backgroundImage(url('../images/wok/2.jpg'), center, auto);
+    }
+    .wok-item__img_third {
+        @include backgroundImage(url('../images/wok/3.jpg'), center, auto);
+    }
+    .wok-item__img_fourth {
+        @include backgroundImage(url('../images/wok/4.jpg'), center, auto);
+    }
+    &__fire {
+        @include flex(row, center, center);
+        background-color: $color-orange;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 10%;
+        right: 5%;
+    }
+    
+    &__title {
+        @include font-style(20px, $ff-OpenSansBold, 700, $color-black);
+        margin: 0 auto;
+    }
+    &__quantity {
+        @include font-style(12px, $ff-OpenSansLight, 300, $color-black);
+        margin: 0 auto;
+    }
+    &__add {
+        @include font-style(12px, $ff-OpenSansLight, 300, $color-black);
+        margin: 0 auto;
+
+        span:nth-child(1) {
+            background-color: $color-grey-white;
+            padding: 0 10px;
+            &::after {
+                content: 'x';
+                padding-left: 5px;
+            }
+        }
+        span:nth-child(2) {
+            padding: 0 5px;
+            &::after {
+                content: "\f067";
+                font-family: 'icomoon';
+                background-color: $color-orange;
+                color: $color-white;
+                padding: 4px;
+                font-size: 10px;
+                margin-left: 10px;
+            }
+        }
+    }
+    &__types {
+        // margin: 0 auto;
+    }
+    &__price {
+        margin: 0 auto;
+        span:nth-child(1) {
+            @include font-style(22px, $ff-RobotoSlabBold, 700, $color-black);
+        }
+        span:nth-child(2) {
+            margin: 0 10px;
+            &::before {
+                content: "\f068";
+                font-family: 'icomoon';
+                font-size: 8px;
+                padding: 5px;
+                border-radius: 50%;
+                border: 1px solid $color-grey;
+                margin-right: 10px;
+            }
+            &::after {
+                content: "\f067";
+                font-family: 'icomoon';
+                font-size: 8px;
+                padding: 5px;
+                border-radius: 50%;
+                border: 1px solid $color-grey;
+                margin-left: 10px;
+            }
+        }
+    }
+
+    &__btn {
+        align-self: flex-start;
+        background-color: $color-orange;
+        padding: 14px 70px 14px 30px;
+        border-radius: 5px;
+        margin: 0 auto;
+        .wok-item__link {
+            @include font-style(14px, $ff-OpenSansSemiBold, 600, $color-white, uppercase);
+            position: relative;
+            img {
+                position: absolute;
+                top: 0px;
+                right: -50px;
+
+            }
+        }
+    }
+}
+
+// settings for slides
+
+.wok .slick-slide {
+    margin: 0 10px;
+    @include flex(column, $gap:25px);
+    box-shadow: 0px 4px 29px 0px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+
+    &:hover {
+        box-shadow: 0px 4px 29px 0px rgba(255,255,0, 0.8);
+    }
+}
+
+.wok .slick-track{
+	margin: 10px 0;
+}
+
+
+.wok-item__menu {
+    display: flex;
+    justify-content: center;
+}
+.wok-item__label {
+    @include font-style(12px, $ff-OpenSansLight, 300, $color-black);
+    padding: 8px 80px 8px 10px;
+    background-color: $color-grey-white;
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+        content: "\f107";
+        font-family: 'icomoon';
+        font-size: 18px;
+        position: absolute;
+        top: 50%;
+        right: 6px;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.submenu {
+    display: none;
+
+    &__item {
+        padding: 10px;
+        transition: all 0.5s;
+       
+        &:hover {
+            background-color: #0000ff;
+        }
+    }
+    &__link {
+        @include font-style(12px, $ff-OpenSansLight, 300, $color-black);
+    }
+}
+
+
+
+.wok-item__input:checked~.wok-item__label .submenu,
+.wok-item__input2:checked~.wok-item__label .submenu,
+.wok-item__input3:checked~.wok-item__label .submenu,
+.wok-item__input4:checked~.wok-item__label .submenu,
+.wok-item__input5:checked~.wok-item__label .submenu {
+   @extend %checkedSubmenu
+}
+
+.wok-item__input:checked+.wok-item__label::after,
+.wok-item__input2:checked+.wok-item__label::after,
+.wok-item__input3:checked+.wok-item__label::after,
+.wok-item__input4:checked+.wok-item__label::after,
+.wok-item__input5:checked+.wok-item__label::after {
+    @extend %checkedLabel 
+}
+
+.wok-item__input:not(:checked)+.wok-item__label::after,
+.wok-item__input2:not(:checked)+.wok-item__label::after,
+.wok-item__input3:not(:checked)+.wok-item__label::after,
+.wok-item__input4:not(:checked)+.wok-item__label::after,
+.wok-item__input5:not(:checked)+.wok-item__label::after {
+    @extend %notCheckedLabel
+}
+
+
+
+
